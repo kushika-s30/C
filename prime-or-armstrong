@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <math.h>
+int checkIfPrime(int n);
+int checkIfArm(int n);
+int n,count;
+int main()
+{
+    printf("Enter n");
+    scanf("%d",&n);
+    checkIfPrime(n);
+    checkIfArm(n);
+    return 0;
+}
+
+int checkIfPrime(int n){
+        count=0;
+        for(int j=1;j<=n;j++){
+            if(n%j==0){
+                count++;
+            }
+        }
+        if(count==2){
+            printf("\n%d is a prime number",n);
+        }
+        else{
+            printf("\n%d is not a prime number",n);
+        }
+}
+
+
+int checkIfArm(int n){
+    int a=0,d=0,r;
+    int temp1=n,temp2=n;
+    while(n>0){
+        d++;
+        n=n/10;
+    }
+    while(temp1!=0){
+        r=temp1%10;
+        a=a+(pow(r,d));
+        temp1=temp1/10;
+    }
+    if(a==temp2){
+        printf("\n%d is an armstrong  number",temp2);
+    }
+    else{
+        printf("\n%d is not an armstrong  number",temp2);
+    }
+}
