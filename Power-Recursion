@@ -1,0 +1,19 @@
+#include <stdio.h>
+int power();
+int b,n,p;
+int main()
+{
+    printf("Enter base and exponent");
+    scanf("%d %d",&b,&n);
+    power(b,n);
+    printf("%d",p);
+    return 0;
+}
+int power(int b,int n) {
+    if (n>1) {
+       p=b*(power(b,n-1));
+    }
+    else{
+       p=1;
+    }
+}
